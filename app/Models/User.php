@@ -53,4 +53,8 @@ class User extends Authenticatable
     public function genres() {
         return $this->hasMany(Genre::class);
     }
+
+    // public function messages() {
+    //     return $this->hasMany(Message::class);
+    // }
 }

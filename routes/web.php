@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\MessagesController;
 use App\Http\Controllers\MoviesController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,7 +30,11 @@ Route::get('/createmovie', [MoviesController::class, 'getcreate'])->middleware('
 Route::get('/creategenre', [MoviesController::class, 'getgenre'])->middleware('auth3');
 Route::get('/managemovies', [MoviesController::class, 'getmanage'])->middleware('auth3');
 Route::get('/updatemovie/{id}', [MoviesController::class, 'getupdate'])->middleware('auth3');
+Route::get('/messages', [MessagesController::class, 'getmessages'])->middleware('auth');
+Route::get('/sendmessage', [MessagesController::class, 'getsendmessage'])->middleware('auth');
 
+
+Route::post('/sendmessage', [MessagesController::class, 'sendmessage'])->middleware('auth');
 Route::post('/createmovie', [MoviesController::class, 'createmovie'])->middleware('auth3');
 Route::post('/updatemovie', [MoviesController::class, 'updatemovie'])->middleware('auth3');
 Route::post('/creategenre', [MoviesController::class, 'creategenre'])->middleware('auth3');

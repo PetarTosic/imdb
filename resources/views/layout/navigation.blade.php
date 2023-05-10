@@ -44,6 +44,8 @@
               <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="#">Profile</a></li>
                 <li><a class="dropdown-item" href="/settings">Settings</a></li>
+                <li><a class="dropdown-item" href="/messages">Messages</a></li>
+                <li><a class="dropdown-item" href="/sendmessage">Send Message</a></li>
                 @if (auth()->user()->admin)
                   <li><a class="dropdown-item" href="/createmovie">Create movie</a></li>
                   <li><a class="dropdown-item" href="/creategenre">Create genre</a></li>
